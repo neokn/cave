@@ -3,10 +3,10 @@ import { ref, reactive } from 'vue'
 
 defineProps<{ msg: string }>()
 
-const ping = ref("")
+const echo = ref("")
 
-const echo = () => {
-    fetch(`http://echo.zuplo.io/?echo=${ping.value}`)
+const yelling = () => {
+    fetch(`http://echo.zuplo.io/?echo=${echo.value}`)
         .then((response) => response.json())
         .then((data) => alert(data.query.echo))
 }
@@ -16,8 +16,8 @@ const echo = () => {
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <input type="text" v-model="ping">
-    <button type="button" @click="echo()">shout</button>
+    <input type="text" v-model="echo">
+    <button type="button" @click="yelling()">yelling</button>
   </div>
 </template>
 
