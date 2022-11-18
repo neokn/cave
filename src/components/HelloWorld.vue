@@ -19,6 +19,8 @@ const yelling = () => {
     <input type="text" v-model="echo">
     <button type="button" @click="yelling()">yelling</button>
   </div>
+
+  <a href="https://github.com/neokn/cave">source code</a>
 </template>
 
 <style scoped>
