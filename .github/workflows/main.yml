@@ -1,0 +1,21 @@
+name: Auto update docs
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.action_token }}
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          run_install: true
+      - run: pnpm run build
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: main
+          skip_checkout: true
+          commit_message: auto update docs
