@@ -6,7 +6,7 @@ defineProps<{ msg: string }>()
 const echo = ref("")
 
 const yelling = () => {
-    fetch(`http://echo.zuplo.io/?echo=${echo.value}`)
+    fetch(`//echo.zuplo.io/?echo=${echo.value}`)
         .then((response) => response.json())
         .then((data) => alert(data.query.echo))
 }
